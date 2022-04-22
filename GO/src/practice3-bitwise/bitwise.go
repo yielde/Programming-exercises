@@ -1,20 +1,12 @@
 /*
  * @Author: Galen Tong
  * @Date: 2022-04-17 14:47:02
- * @LastEditTime: 2022-04-17 23:24:56
+ * @LastEditTime: 2022-04-22 18:36:17
  * @Description: 按位补足^: ^x
  */
 package main
 
 import "fmt"
-
-func main() {
-	var i int8 = 2
-	fmt.Printf("the complement of %b is: %b\n", i, ^i) // the complement of 10 is: -11
-
-	var j uint8 = 2
-	fmt.Printf("the complement of %b is: %b\n", j, ^j) // the complement of 10 is: 11111101
-}
 
 // m^x
 // 有符号类型m=-1, m^x:
@@ -28,3 +20,10 @@ func main() {
 // x = 2: 0000 0010
 // m:     1111 1111
 // m ^ x: 1111 1111 ^ 0000 0010 = 1111 1101
+func main() {
+	var i int8 = 2
+	fmt.Printf("the complement of %b is: %b\n", i, ^i) // the complement of 10 is: -11
+
+	var j uint8 = 2
+	fmt.Printf("the complement of %b is: %b\n", j, ^j) // the complement of 10 is: 11111101
+}
