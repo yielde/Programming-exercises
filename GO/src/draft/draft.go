@@ -1,30 +1,35 @@
+/*
+ * @Author: Galen Tong
+ * @Date: 2022-04-17 14:47:02
+ * @LastEditTime: 2022-04-24 13:45:14
+ * @Description:
+ */
 package main
 
-import (
-    "fmt"
-)
+import "fmt"
 
-type Base struct{}
-
-func (Base) Magic() {
-    fmt.Println("base magic")
+type IDuck interface {
+	Quack()
+	Walk()
 }
 
-func (self Base) MoreMagic() {
-    self.Magic()
-    self.Magic()
+func DuckDance(duck IDuck) {
+	duck.Quack()
+	duck.Walk()
 }
 
-type Voodoo struct {
-    Base
+type Bird struct {
 }
 
-func (Voodoo) Magic() {
-    fmt.Println("voodoo magic")
+func (b *Bird) Quack() {
+	fmt.Println("I am quacking!")
+}
+
+func (b *Bird) Walk() {
+	fmt.Println("I am walking")
 }
 
 func main() {
-    v := new(Voodoo)
-    v.Magic()
-    v.MoreMagic()
+	b := new(Bird)
+    DuckDance(b)
 }
